@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class wifi_scan extends AppCompatActivity {
 
-    Intent newScan_intent = new Intent(wifi_scan.this, new_scan.class);
+    //Intent newScan_intent = new Intent(wifi_scan.this, new_scan.class);
     //Intent previousScan_intent = new Intent(wifi_scan.this, previous_scan.class);
 
     @Override
@@ -26,6 +26,7 @@ public class wifi_scan extends AppCompatActivity {
 
     public void clicked_newScanButton(View view) {
         Toast.makeText(getApplicationContext(),"Switches to activity to enter a new scan", Toast.LENGTH_LONG).show();
+        Intent newScan_intent = new Intent(wifi_scan.this, new_scan.class);
         startActivity(newScan_intent);
     }
 

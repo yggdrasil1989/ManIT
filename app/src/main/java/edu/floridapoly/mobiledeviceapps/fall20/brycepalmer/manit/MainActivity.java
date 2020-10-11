@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clicked_start(View view) {
-        Intent intent = new Intent(MainActivity.this, wifi_scan.class);
-        startActivity(intent);
+        Intent startIntent = new Intent(MainActivity.this, wifi_scan.class);
+        startActivity(startIntent);
     }
 }
