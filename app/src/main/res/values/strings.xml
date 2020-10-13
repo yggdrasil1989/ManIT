@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">ManIT</string>
+    <string name="newScan">New Scan</string>
+    <string name="newScan_text">Switches to activity to enter a new scan</string>
+    <string name="previousScan_text">Shows the last device scanned</string>
+    <string name="wifiScan">to wifi scan activity</string>
+    <string name="MAC">"MAC: "</string>
+    <string name="newWAP_text">New WAP found</string>
+    <string name="lat">Latitude</string>
+    <string name="lon">Longitude</string>
+    <string name="addWAP">Add WAP</string>
+    <string name="validate_text">Save for Validation</string>
+    <string name="skip_text">Skip</string>
+    <string name="number">number</string>
+    <string name="inventory">Physical Inventory</string>
+    <string name="tempOrg1">Microsoft</string>
+    <string name="tempOrg2">Google</string>
+    <string name="tempOrg3">Oracle</string>
+    <string name="OrgsTitle">Organizations</string>
+    <string name="ListsTitle">Lists</string>
+    <string name="tempList1">Meeting Room 26A</string>
 </resources>
