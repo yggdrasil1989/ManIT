@@ -1,6 +1,10 @@
 package edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit;
 
 import androidx.annotation.Nullable;
+//import android.net.wifi.ScanResult;
+//import android.net.wifi.WifiManager;
+//import android.net.wifi.WifiInfo;
+//import com.google.mlkit:barcode-scanning:16.0.3;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
