@@ -23,4 +23,10 @@
     <string name="save">Save WAP</string>
     <string name="wap_name">WAP Name: </string>
     <string name="enter_name">Enter Name</string>
+    <string name="wifi_scan">WiFi Scan</string>
+    <string name="save_wap">Save WAP</string>
+    <string name="ssid">SSID: </string>
+    <string name="mac">MAC Address: </string>
+    <string name="ip">IP Address: </string>
+    <string name="signalstrength">Signal Strength: </string>
 </resources>
