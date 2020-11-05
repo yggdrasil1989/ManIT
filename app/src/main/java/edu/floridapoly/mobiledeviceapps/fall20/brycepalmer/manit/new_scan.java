@@ -38,7 +38,7 @@ public class new_scan extends AppCompatActivity {
         IP = info.getIpAddress();
         SSID = info.getSSID();
 
-        Toast.makeText(getApplicationContext(),"stop 3", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"stop 1", Toast.LENGTH_LONG).show();
         if (wapname.equals(""))
         {
             Toast.makeText(getApplicationContext(),"Enter a WAP Name Then Try Again stop 2", Toast.LENGTH_LONG).show();
@@ -50,12 +50,12 @@ public class new_scan extends AppCompatActivity {
             name.setText(wapname);
             TextView ssid = (TextView) findViewById(R.id.ssid_holder);
             ssid.setText(SSID);
-            /*TextView ip = (TextView) findViewById(R.id.ip_holder);
-            //ip.setText(IP);
+            TextView ip = (TextView) findViewById(R.id.ip_holder);
+            ip.setText(String.valueOf(IP));
             TextView mac = (TextView) findViewById(R.id.mac_holder);
             mac.setText(MAC);
             TextView signalstrength = (TextView) findViewById(R.id.signalstrength_holder);
-            signalstrength.setText(sigstrength);*/
+            signalstrength.setText(String.valueOf(sigstrength));
         }
 
     }
