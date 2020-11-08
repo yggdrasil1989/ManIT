@@ -90,13 +90,19 @@ public class AppDbRepo {
         return orgsDao.getAll();
     }
 
-    public List<Lists> getAllLists(){
+    public Orgs getOrg(int id) {return orgsDao.getById(id);}
+
+    public LiveData<List<Lists>> getAllLists(){
         return listsDao.getAll();
     }
+
+    public LiveData<List<Lists>> getListForOrg(int OrgID){return listsDao.getAllForOrg(OrgID);}
 
     public List<Items> getAllItems(){
         return itemsDao.getAll();
     }
+
+    public LiveData<List<Items>> getItemsForList(int ListID) { return itemsDao.getAllFromList(ListID); }
 
     public List<WAPS> getAllWAPS(){
         return wapsDao.getAll();

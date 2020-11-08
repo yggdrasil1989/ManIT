@@ -1,5 +1,6 @@
 package edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.models;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -20,5 +21,8 @@ public interface ItemsDao {
 
     @Query("SELECT * FROM items")
     List<Items> getAll();
+
+    @Query("SELECT * FROM items WHERE ListID = (:ListID)")
+    LiveData<List<Items>> getAllFromList(int ListID);
 }
 

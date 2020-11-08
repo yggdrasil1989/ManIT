@@ -57,14 +57,6 @@ public class Organizations extends AppCompatActivity {
         });
     }
 
-    //Currently we are going to just make it so that every organization goes to the same view
-    public void org_clicked(View view) {
-        Button button = (Button) findViewById(view.getId());
-        Intent intent = new Intent(Organizations.this, OrganizationPage.class);
-        intent.putExtra("Organization", button.getText().toString());
-        startActivity(intent);
-    }
-
     public void clicked_add(View view) {
         // Test adding a new organization -- Keeping it here to show how we add a new value
         Orgs org_to_add = new Orgs("Jimbos Garage");

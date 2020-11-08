@@ -28,5 +28,8 @@ public interface OrgsDao {
     @Query("SELECT * FROM orgs WHERE OrgID IN (:orgIds)")
     List<Orgs> getAllByIds(int[] orgIds);
 
+    @Query("SELECT * FROM orgs WHERE OrgID = (:id)")
+    Orgs getById(int id);
+
     // Can add more queries as needed
 }
