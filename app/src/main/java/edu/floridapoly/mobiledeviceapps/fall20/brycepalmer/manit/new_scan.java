@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
-import android.net.DhcpInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -54,7 +53,7 @@ public class new_scan extends AppCompatActivity {
         wapname = wng.getText().toString();
         sigstrength = info.getRssi();
         MAC = info.getBSSID();
-        IP = manager.getDhcpInfo().serverAddress;
+        IP = info.getIpAddress();
         SSID = info.getSSID();
         latitude = location.getLatitude();
         longitude = location.getLongitude();
