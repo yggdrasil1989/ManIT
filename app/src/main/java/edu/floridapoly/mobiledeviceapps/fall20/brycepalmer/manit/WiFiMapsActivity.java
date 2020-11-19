@@ -9,21 +9,30 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class WiFiMapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    protected Marker createMarker(double latitude, double longitude, String title, String snippet, int iconResID) {
+        return googleMap.addMarker(new MarkerOptions()
+        .position(new LatLng(name.latitude, name.longitude))
+                .anchor(0.5f, 0.5f)
+                .title(name.name)
+                .snippet("WAP Name: " + name.wapname +"Net Name: " + name. BSSID + "IP: "
+                        + name.IP + "MAC Adsdess: "+ name.MAC + "Signal Strength"
+                        + name.sigstrength));
+    }
     int loopcnt =0;
     while(loopcnt == 0)
     {
-        if (place holder  !=null)
-        {
-            onMapReady();
+        if(listlocation from database  !=null){
+            createMarker();
             //move in the saved list ++;
-        }
-    else
+        }else
 
         {
             Toast.makeText(getApplicationContext(), "No Saved Waps/ End of List Loaded", Toast.LENGTH_LONG).show();
@@ -42,6 +51,11 @@ public class WiFiMapsActivity extends FragmentActivity implements OnMapReadyCall
         mapFragment.getMapAsync(this);
     }
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+    }
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -51,15 +65,7 @@ public class WiFiMapsActivity extends FragmentActivity implements OnMapReadyCall
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng plchldr = new LatLng(lat, longi);
-        mMap.addMarker(new MarkerOptions().position(plchldr).title(name));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(plchldr));
-    }
 
 
 }
