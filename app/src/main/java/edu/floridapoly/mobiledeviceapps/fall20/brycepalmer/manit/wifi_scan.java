@@ -25,12 +25,13 @@ public class wifi_scan extends AppCompatActivity {
     }
 
     public void clicked_newScanButton(View view) {
+        Toast.makeText(getApplicationContext(),"Switches to activity to enter a new scan", Toast.LENGTH_LONG).show();
         Intent newScan_intent = new Intent(wifi_scan.this, new_scan.class);
         startActivity(newScan_intent);
     }
 
     public void clicked_previousScanButton(View view) {
-        Intent wapmap_intent = new Intent(wifi_scan.this, WiFiMapsActivity.class);
+        Toast.makeText(getApplicationContext(),"Shows the map of the last scan", Toast.LENGTH_LONG).show();
         //startActivity(previousScan_intent);
     }
 
