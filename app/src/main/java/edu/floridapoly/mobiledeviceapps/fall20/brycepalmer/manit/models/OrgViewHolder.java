@@ -33,7 +33,7 @@ public class OrgViewHolder extends RecyclerView.ViewHolder{
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), OrganizationPage.class);
                 intent.putExtra("Organization", org.getName());
-                intent.putExtra("OrgID", org.getOrgID());
+                intent.putExtra(Organizations.ORG_ID_KEY, org.getOrgID());
                 v.getContext().startActivity(intent);
             }
         });
