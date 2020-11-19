@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
+import android.net.DhcpInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -53,7 +54,7 @@ public class new_scan extends AppCompatActivity {
         wapname = wng.getText().toString();
         sigstrength = info.getRssi();
         MAC = info.getBSSID();
-        IP = info.getIpAddress();
+        IP = manager.getDhcpInfo().serverAddress;
         SSID = info.getSSID();
         latitude = location.getLatitude();
         longitude = location.getLongitude();
@@ -106,7 +107,7 @@ public class new_scan extends AppCompatActivity {
 
     }
     public void clicked_save(View view) {
-
+        
         Toast.makeText(getApplicationContext(),"Option to validate later", Toast.LENGTH_LONG).show();
     }
     public void clicked_skip(View view) {
