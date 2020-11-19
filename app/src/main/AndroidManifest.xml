@@ -43,6 +43,10 @@
         <activity android:name=".OrganizationPage" />
         <activity android:name=".new_scan" />
         <activity android:name=".wifi_scan" />
+        <activity android:name=".AddInventoryList" />
+        <activity android:name=".AddItem" />
+        <activity android:name=".AddOrganization" />
+        <activity android:name=".ItemDetails" />
         <activity android:name=".Organizations">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
