@@ -15,14 +15,23 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class WiFiMapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    int loopcnt =0;
+    while(loopcnt == 0)
+    {
+        if (place holder  !=null)
+        {
+            onMapReady();
+            //move in the saved list ++;
+        }
+    else
 
-    if(  != null){
-        onMapMark();
-        move in the saved list ++;
+        {
+            Toast.makeText(getApplicationContext(), "No Saved Waps/ End of List Loaded", Toast.LENGTH_LONG).show();
+            loopcnt = 1;
+        }
     }
-    else{
-        Toast.makeText(getApplicationContext(),"No Saved Waps", Toast.LENGTH_LONG).show();
-    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +52,7 @@ public class WiFiMapsActivity extends FragmentActivity implements OnMapReadyCall
      * installed Google Play services and returned to the app.
      */
     @Override
-    public void onMapReady(GoogleMap googleMap, double lat, double longi, String name) {
+    public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
@@ -51,4 +60,6 @@ public class WiFiMapsActivity extends FragmentActivity implements OnMapReadyCall
         mMap.addMarker(new MarkerOptions().position(plchldr).title(name));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(plchldr));
     }
+
+
 }

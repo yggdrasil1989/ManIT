@@ -107,7 +107,7 @@ public class new_scan extends AppCompatActivity {
 
     }
     public void clicked_save(View view) {
-        
+
         Toast.makeText(getApplicationContext(),"Option to validate later", Toast.LENGTH_LONG).show();
     }
     public void clicked_skip(View view) {
