@@ -17,24 +17,23 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class WiFiMapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    protected Marker createMarker(double latitude, double longitude, String title, String snippet, int iconResID) {
-        return googleMap.addMarker(new MarkerOptions()
-        .position(new LatLng(name.latitude, name.longitude))
+    protected Marker createMarker(double latitude, double longitude, String title, String MAC, String SigStrength, String wapname, String BSSID,int IP) {
+        return mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(latitude, longitude))
                 .anchor(0.5f, 0.5f)
-                .title(name.name)
-                .snippet("WAP Name: " + name.wapname +"Net Name: " + name. BSSID + "IP: "
-                        + name.IP + "MAC Adsdess: "+ name.MAC + "Signal Strength"
-                        + name.sigstrength));
+                .title(title)
+                .snippet("WAP Name: " + wapname +"Net Name: " + BSSID + "IP: "
+                        + IP + "MAC Adsdess: "+ MAC + "Signal Strength"
+                        + SigStrength));
     }
     int loopcnt =0;
+
     while(loopcnt == 0)
     {
-        if(listlocation from database  !=null){
+        if(loopcnt  !=0){
             createMarker();
             //move in the saved list ++;
-        }else
-
-        {
+        }else{
             Toast.makeText(getApplicationContext(), "No Saved Waps/ End of List Loaded", Toast.LENGTH_LONG).show();
             loopcnt = 1;
         }
