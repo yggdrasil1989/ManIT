@@ -49,6 +49,7 @@
         <activity android:name=".AddItem" />
         <activity android:name=".AddOrganization" />
         <activity android:name=".ItemDetails" />
+        <activity android:name=".BarcodeScanner"/>
         <activity android:name=".Organizations">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
