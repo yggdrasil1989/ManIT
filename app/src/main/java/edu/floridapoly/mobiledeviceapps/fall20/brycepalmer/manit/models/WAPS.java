@@ -11,7 +11,10 @@ public class WAPS {
     @PrimaryKey(autoGenerate = true)
     private int wapID;
 
+    private String Name;
     private String MAC;
+    private String SSID;
+    private int IP;
 
     private double latitude;
     private double longitude;
@@ -25,6 +28,10 @@ public class WAPS {
             childColumns = "OrgID",
             onDelete = ForeignKey.CASCADE)
     private int OrgID;
+
+    public void setName(String name) { this.Name = name; }
+    public void setSSID(String SSID) { this.SSID = SSID; }
+    public void setIP(int IP) { this.IP = IP; }
 
     public void setWapID(int wapID) {
         this.wapID = wapID;
@@ -54,10 +61,14 @@ public class WAPS {
         this.validated = validated;
     }
 
+    public String getName() { return this.Name; }
+    public String getSSID() { return this.SSID; }
+
     public int getOrgID() {
         return this.OrgID;
     }
 
+    public int getIP() { return this.IP; }
     public int getWapID() {
         return this.wapID;
     }
