@@ -28,16 +28,16 @@ public class WiFiMapsActivity extends FragmentActivity implements OnMapReadyCall
     }
     int loopcnt =0;
 
-    while(loopcnt == 0)
-    {
-        if(loopcnt  !=0){
-            createMarker();
-            //move in the saved list ++;
-        }else{
-            Toast.makeText(getApplicationContext(), "No Saved Waps/ End of List Loaded", Toast.LENGTH_LONG).show();
-            loopcnt = 1;
-        }
-    }
+//    while(loopcnt == 0)
+//    {
+//        if(loopcnt  !=0){
+//            createMarker();
+//            //move in the saved list ++;
+//        }else{
+//            Toast.makeText(getApplicationContext(), "No Saved Waps/ End of List Loaded", Toast.LENGTH_LONG).show();
+//            loopcnt = 1;
+//        }
+//    }
 
 
     @Override
