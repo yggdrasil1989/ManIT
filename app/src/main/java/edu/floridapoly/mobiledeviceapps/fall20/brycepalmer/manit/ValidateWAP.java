@@ -25,6 +25,13 @@ public class ValidateWAP extends AppCompatActivity {
 
     private int OrgID;
 
+    public static String WAP_NAME_KEY = "WAP_DETAIL_NAME";
+    public static String WAP_MAC_KEY = "WAP_DETAIL_MAC";
+    public static String WAP_IP_KEY = "WAP_DETAIL_IP";
+    public static String WAP_SSID_KEY = "WAP_DETAIL_SSID";
+    public static String WAP_LAT_KEY = "WAP_DETAIL_LAT";
+    public static String WAP_LONG_KEY = "WAP_DETAIL_LONG";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +59,4 @@ public class ValidateWAP extends AppCompatActivity {
         });
     }
 
-    public void wap_clicked(View view) {
-        Toast.makeText(this, "WAP was clicked. This would activate the animation to display more details about the WAP and allow for validation", Toast.LENGTH_LONG).show();
-    }
 }

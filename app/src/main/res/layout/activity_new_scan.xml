@@ -173,7 +173,7 @@
         tools:layout_editor_absoluteX="71dp"
         tools:layout_editor_absoluteY="432dp"
         android:layout_gravity="center"
-        android:onClick="clicked_validate"/>
+        android:onClick="clicked_save"/>
 
     <Button
         android:id="@+id/skip_button"
