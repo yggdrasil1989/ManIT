@@ -46,6 +46,8 @@ public class AddItem extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 //Toast.makeText(this, "result_ok", Toast.LENGTH_SHORT).show();
                 entry = data.getStringExtra("serialNumber");
+                if(entry == null) {
+                    Toast.makeText(this, "Barcode scan unsuccessful", Toast.LENGTH_SHORT).show();}
                 itemSerialNum.setText(entry);
                 //Toast.makeText(this, "returned", Toast.LENGTH_SHORT).show();
                 //Toast.makeText(this, entry, Toast.LENGTH_SHORT).show();
