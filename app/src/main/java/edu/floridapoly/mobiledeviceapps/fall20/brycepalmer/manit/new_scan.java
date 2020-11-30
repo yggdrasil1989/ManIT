@@ -146,6 +146,8 @@ public class new_scan extends AppCompatActivity implements LocationListener {
 
         dbRepo.insert(wap);
 
+        finish();
+
         //Toast.makeText(getApplicationContext(),"Option to validate later", Toast.LENGTH_LONG).show();
     }
     public void clicked_skip(View view) {
