@@ -30,7 +30,7 @@ public class AddItem extends AppCompatActivity {
             public void onClick(View viewForScanner) {
                 Intent scanIntent = new Intent(AddItem.this, BarcodeScanner.class);
                 startActivityForResult(scanIntent, barcodeData);
-                Toast.makeText(AddItem.this, "start barcode intent", Toast.LENGTH_SHORT);
+                //Toast.makeText(AddItem.this, "start barcode intent", Toast.LENGTH_SHORT);
             }
         });
     }

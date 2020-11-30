@@ -128,7 +128,7 @@ public class BarcodeScanner extends AppCompatActivity {
                         //Toast.makeText(BarcodeScanner.this, "success", Toast.LENGTH_SHORT).show();
                         processResult(firebaseVisionBarcodes);
 
-                        Toast.makeText(BarcodeScanner.this, "leaving barcode intent", Toast.LENGTH_SHORT);
+                        //Toast.makeText(BarcodeScanner.this, "leaving barcode intent", Toast.LENGTH_SHORT);
                         //data to send back
                         Intent intent = new Intent();
                         intent.putExtra("serialNumber", serialNumberData);
@@ -145,7 +145,7 @@ public class BarcodeScanner extends AppCompatActivity {
     }
 
     private void processResult(List<FirebaseVisionBarcode> firebaseVisionBarcodes) {
-        Toast.makeText(BarcodeScanner.this, "processResult", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(BarcodeScanner.this, "processResult", Toast.LENGTH_SHORT).show();
         for (FirebaseVisionBarcode item : firebaseVisionBarcodes) {
 
             //Draw rectangle
