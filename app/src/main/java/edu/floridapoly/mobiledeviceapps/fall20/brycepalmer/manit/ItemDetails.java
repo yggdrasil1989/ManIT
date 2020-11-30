@@ -3,8 +3,10 @@ package edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,5 +38,7 @@ public class ItemDetails extends AppCompatActivity {
         itemDetailSerialNum.setText(itemSerialNum);
         itemDetailDesc.setText(itemDesc);
     }
+
+
 
 }

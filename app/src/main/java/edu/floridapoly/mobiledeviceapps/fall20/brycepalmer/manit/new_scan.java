@@ -3,6 +3,7 @@ package edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.DhcpInfo;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ import java.util.Formatter;
 import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.models.AppDbRepo;
 import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.models.WAPS;
 
-public class new_scan extends AppCompatActivity {
+public class new_scan extends AppCompatActivity implements LocationListener {
 
     private int OrgID;
     String wapname;
@@ -58,14 +59,21 @@ public class new_scan extends AppCompatActivity {
         }
         Location location = locman.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
+        if(location != null)
+        {
+            latitude = location.getLatitude();
+            longitude = location.getLongitude();
+        }
+        else {
+            locman.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, this);
+        }
+
         EditText wng = (EditText) findViewById(R.id.wap_name_gather);
         wapname = wng.getText().toString();
         sigstrength = info.getRssi();
         MAC = info.getBSSID();
         IP = manager.getDhcpInfo().serverAddress;
         SSID = info.getSSID();
-        latitude = location.getLatitude();
-        longitude = location.getLongitude();
 
         //signal strength strings
         String Excellent = "Excellent"; // >-50
@@ -114,6 +122,13 @@ public class new_scan extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    public void onLocationChanged(Location location){
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
+    }
+
     public void clicked_save(View view) {
 
         AppDbRepo dbRepo = new AppDbRepo(getApplication());
@@ -125,6 +140,9 @@ public class new_scan extends AppCompatActivity {
         wap.setLatitude(latitude);
         wap.setMAC(MAC);
         wap.setOrgID(OrgID);
+        wap.setName(wapname);
+        wap.setSSID(SSID);
+        wap.setIP(IP);
 
         dbRepo.insert(wap);
 
