@@ -23,7 +23,6 @@ import android.widget.Toast;
 import java.util.List;
 
 import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.models.AppDatabase;
-import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.models.AppDatabase_Impl;
 import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.models.AppDbRepo;
 import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.models.OrgListAdapter;
 import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.models.OrgViewModel;

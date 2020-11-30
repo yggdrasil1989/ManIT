@@ -104,9 +104,7 @@ public class AppDbRepo {
 
     public LiveData<List<Items>> getItemsForList(int ListID) { return itemsDao.getAllFromList(ListID); }
 
-    public List<WAPS> getAllWAPS(){
-        return wapsDao.getAll();
-    }
+    public List<WAPS> getListWAPSForOrg(int OrgID) { return wapsDao.getListWAPSForOrg(OrgID); }
 
     public LiveData<List<WAPS>> getWAPSForOrg(int OrgID) { return wapsDao.getAllForOrg(OrgID); }
 

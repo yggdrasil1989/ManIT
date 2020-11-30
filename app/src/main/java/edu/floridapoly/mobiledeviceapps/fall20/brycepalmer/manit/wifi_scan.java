@@ -35,7 +35,8 @@ public class wifi_scan extends AppCompatActivity {
 
     public void clicked_previousScanButton(View view) {
         Intent wapmap_intent = new Intent(wifi_scan.this, WiFiMapsActivity.class);
-        //startActivity(previousScan_intent);
+        wapmap_intent.putExtra(Organizations.ORG_ID_KEY, OrgID);
+        startActivity(wapmap_intent);
     }
 
     public void clicked_validate(View view) {
