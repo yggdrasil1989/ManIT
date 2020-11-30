@@ -35,9 +35,13 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-        <meta-data
+      
+      <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/maps_api_key" />
+        <meta-data
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="barcode"/>
 
         <activity
             android:name=".WiFiMapsActivity"
@@ -52,6 +56,7 @@
         <activity android:name=".AddItem" />
         <activity android:name=".AddOrganization" />
         <activity android:name=".ItemDetails" />
+        <activity android:name=".BarcodeScanner"/>
         <activity android:name=".Organizations">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
