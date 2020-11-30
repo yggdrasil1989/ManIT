@@ -81,14 +81,14 @@ public class new_scan extends AppCompatActivity implements LocationListener {
         String Fair = "Fair"; // -60 to -70 <
         String Weak = "Weak"; // -70 and greater
 
-        Toast.makeText(getApplicationContext(),"stop 1", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),"stop 1", Toast.LENGTH_LONG).show();
         if (wapname.equals(""))
         {
-            Toast.makeText(getApplicationContext(),"Enter a WAP Name Then Try Again stop 2", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Enter a WAP Name Then Try Again", Toast.LENGTH_LONG).show();
         }
         else
         {
-            Toast.makeText(getApplicationContext(),"stop 3", Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),"stop 3", Toast.LENGTH_LONG).show();
             TextView name = (TextView) findViewById(R.id.wap_name_holder);
             name.setText(wapname);
             TextView ssid = (TextView) findViewById(R.id.ssid_holder);
@@ -146,9 +146,10 @@ public class new_scan extends AppCompatActivity implements LocationListener {
 
         dbRepo.insert(wap);
 
-        Toast.makeText(getApplicationContext(),"Option to validate later", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),"Option to validate later", Toast.LENGTH_LONG).show();
     }
     public void clicked_skip(View view) {
-        Toast.makeText(getApplicationContext(),"Option to skip entry", Toast.LENGTH_LONG).show();
+        finish();
+        //Toast.makeText(getApplicationContext(),"Option to skip entry", Toast.LENGTH_LONG).show();
     }
 }
