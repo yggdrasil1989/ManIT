@@ -14,6 +14,8 @@ import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.OrganizationPag
 import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.Organizations;
 import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.PhysicalInventory_List_Details;
 import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.R;
+import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.ValidateWAP;
+import edu.floridapoly.mobiledeviceapps.fall20.brycepalmer.manit.WAPDetails;
 
 // This class is the view holder that extends the RecyclerView.ViewHolder class
 // All the UI actions/binding occurs with this object.
@@ -28,12 +30,19 @@ public class WAPViewHolder extends RecyclerView.ViewHolder{
 
     // This is where all the magic happens. When the data binds we updated each component.
     public void bind(WAPS item){
-        String text = item.getMAC();
+        String text = item.getName();
         itemsItemView.setText(text);
         itemsItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "WAP was clicked, this would perform our animation to show more details about the item.", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(v.getContext(), WAPDetails.class);
+                intent.putExtra(ValidateWAP.WAP_NAME_KEY, text);
+                intent.putExtra(ValidateWAP.WAP_IP_KEY, item.getIP());
+                intent.putExtra(ValidateWAP.WAP_MAC_KEY, item.getMAC());
+                intent.putExtra(ValidateWAP.WAP_SSID_KEY, item.getSSID());
+                intent.putExtra(ValidateWAP.WAP_LAT_KEY, item.getLatitude());
+                intent.putExtra(ValidateWAP.WAP_LONG_KEY, item.getLongitude());
+                v.getContext().startActivity(intent);
             }
         });
     }

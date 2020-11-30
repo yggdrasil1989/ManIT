@@ -19,8 +19,8 @@ public interface WAPDao {
     @Delete
     void delete(WAPS wap);
 
-    @Query("SELECT * FROM WAPS")
-    List<WAPS> getAll();
+    @Query("SELECT * FROM WAPS WHERE OrgID =(:OrgID)")
+    List<WAPS> getListWAPSForOrg(int OrgID);
 
     @Query("SELECT * FROM WAPS WHERE OrgID = (:OrgID)")
     LiveData<List<WAPS>> getAllForOrg(int OrgID);
