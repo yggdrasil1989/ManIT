@@ -37,20 +37,22 @@ public class AddItem extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Toast.makeText(this, "activityResult", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "activityResult", Toast.LENGTH_SHORT).show();
         super.onActivityResult(requestCode, resultCode, data);
+        itemSerialNum = (EditText) findViewById(R.id.serialNum);
+        //setContentView(R.layout.activity_add_item);
         if (requestCode == barcodeData) {
-            Toast.makeText(this, "barcodeData", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "barcodeData", Toast.LENGTH_SHORT).show();
             if (resultCode == RESULT_OK) {
-                Toast.makeText(this, "result_ok", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "result_ok", Toast.LENGTH_SHORT).show();
                 entry = data.getStringExtra("serialNumber");
                 itemSerialNum.setText(entry);
-                Toast.makeText(this, "returned", Toast.LENGTH_SHORT).show();
-                Toast.makeText(this, entry, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "returned", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, entry, Toast.LENGTH_SHORT).show();
             }
-            Toast.makeText(this, "end of ok", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "end of ok", Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(this, "end of barcodeData", Toast.LENGTH_SHORT);
+        //Toast.makeText(this, "end of barcodeData", Toast.LENGTH_SHORT);
     }
 
     public void create_item(View view){
