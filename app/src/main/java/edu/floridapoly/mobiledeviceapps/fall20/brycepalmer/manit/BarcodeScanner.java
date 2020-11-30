@@ -41,6 +41,7 @@ public class BarcodeScanner extends AppCompatActivity {
     Button btnDetect;
     AlertDialog waitingDialog;
     GraphicOverlay graphicOverlay;
+    String serialNumberData;
 
     @Override
     protected void onResume() {
@@ -124,9 +125,15 @@ public class BarcodeScanner extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionBarcode>>() {
                     @Override
                     public void onSuccess(List<FirebaseVisionBarcode> firebaseVisionBarcodes) {
-                        Toast.makeText(BarcodeScanner.this, "success", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(BarcodeScanner.this, "success", Toast.LENGTH_SHORT).show();
                         processResult(firebaseVisionBarcodes);
 
+                        Toast.makeText(BarcodeScanner.this, "leaving barcode intent", Toast.LENGTH_SHORT);
+                        //data to send back
+                        Intent intent = new Intent();
+                        intent.putExtra("serialNumber", serialNumberData);
+                        setResult(RESULT_OK, intent);
+                        finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -147,68 +154,10 @@ public class BarcodeScanner extends AppCompatActivity {
             graphicOverlay.add(rectOverlay);
 
 
-            Toast.makeText(BarcodeScanner.this, "type", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(BarcodeScanner.this, "type", Toast.LENGTH_SHORT).show();
             int value_type = item.getValueType();
-            //Toast.makeText(BarcodeScanner.this, item.getRawValue(), Toast.LENGTH_SHORT).show();
+            serialNumberData = item.getRawValue();
 
-
-
-            switch (value_type) {
-                case FirebaseVisionBarcode.TYPE_TEXT:
-                {
-                    androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
-                    builder.setMessage(item.getRawValue());
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Toast.makeText(BarcodeScanner.this, "dialogDismiss", Toast.LENGTH_SHORT).show();
-                            dialogInterface.dismiss();
-                        }
-                    });
-                    androidx.appcompat.app.AlertDialog dialog = builder.create();
-                    dialog.show();
-                    Toast.makeText(BarcodeScanner.this, "dialogShow", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(BarcodeScanner.this, "text", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(BarcodeScanner.this, item.getRawValue(), Toast.LENGTH_SHORT).show();
-                    break;
-                }
-
-
-                case FirebaseVisionBarcode.TYPE_URL:
-                {
-                    //start browser url
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getRawValue()));
-                    startActivity(intent);
-                }
-                break;
-
-                case FirebaseVisionBarcode.TYPE_CONTACT_INFO:
-                {
-                    String info = new StringBuilder("Name: ")
-                            .append(item.getContactInfo().getName().getFormattedName())
-                            .append("\n")
-                            .append("Address: ")
-                            .append(item.getContactInfo().getAddresses().get(0).getAddressLines())
-                            .append("\n")
-                            .append("Email: ")
-                            .append(item.getContactInfo().getEmails().get(0).getAddress())
-                            .toString();
-                    androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
-                    builder.setMessage(info);
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
-                        }
-                    });
-                    androidx.appcompat.app.AlertDialog dialog = builder.create();
-                    dialog.show();
-                }
-                break;
-
-                default:
-                    break;
-            }
         }
         waitingDialog.dismiss();
     }
