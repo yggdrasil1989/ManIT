@@ -51,7 +51,10 @@ public class new_scan extends AppCompatActivity implements LocationListener {
 
         LocationManager locman = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(getApplicationContext(),"Turn your GPS ON!!!", Toast.LENGTH_LONG).show();
+            ActivityCompat.requestPermissions(this, new String[]{
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION},1);
+            //Toast.makeText(getApplicationContext(),"Turn your GPS ON!!!", Toast.LENGTH_LONG).show();
             return;
         }
         Location location = locman.getLastKnownLocation(LocationManager.GPS_PROVIDER);
